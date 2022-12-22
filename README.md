@@ -36,14 +36,61 @@ First import the class in your class
 
 ```dart
 
-import 'package:smartlogger/smartlogger.dart';
+import 'package:circular_progress_dialog/circular_progress_dialog.dart';
 
 ```
 
 Example
 
-![image description](https://github.com/dheeraj-bhadoria/Smart-Logger-Debug-mode-only-/blob/main/error.png)
+```dart
 
+import 'package:circular_progress_dialog/circular_progress_dialog.dart';
+
+class _MyHomePageState extends State<MyHomePage> {
+  bool isVisible = false;
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            InkWell(
+              child: Text((isVisible)?"Hide Dialog":"Show Dialog"),
+              onTap: (){
+                setState(() {
+                  if(isVisible){
+                    isVisible = false;
+                  }else{
+                    isVisible = true;
+                  }
+
+                });
+              },
+            ),
+            Container(
+              width: 500,
+              height: 500,
+              child: (isVisible)?
+              CircularProgressDialog(container_width: 100,
+                  container_height: 100, 
+                  icon_size: 50, 
+                  icon_color: 
+                  Colors.blue): 
+              SizedBox(),
+            )
+          ],
+        ),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+```
 
 ## License
 

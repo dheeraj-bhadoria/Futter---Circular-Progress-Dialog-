@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:circular_progress_dialog/circularprogressdialog.dart';
+import 'package:circular_progress_dialog/circular_progress_dialog.dart';
 
 void main() {
 
